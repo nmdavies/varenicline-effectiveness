@@ -1,5 +1,5 @@
 //Neil Davies 07/01/16
-//This imputes the effect of treatment on abstinence
+//This imputes missing BMI and IMD data
 ssc install ICE, replace 
 cd z:\
 set more off
@@ -11,7 +11,7 @@ ice Rx_eventdate-cov_hyp_anxioly_ever cov_bmi o.cov_imd, saving(5_effectabstinen
 //Open the imputed dataset
 use "5_effectabstinence\data\effectabstinence_imputed_1.dta",clear
 
-//Reset all the mi data
+//Reset all the MI data
 mi unset
 mi import ice, automatic clear 
 mi register regular patid-cov_hyp_anxioly_ever
